@@ -15,6 +15,6 @@ if __name__ == "__main__":
 
     if args.insert:
         print("Insert")
-        insert_note.insert_note(args.insert[0])
+        insert_note.insert_note(args.insert[0], args.format)
     elif args.delete:
         print("Delete")
