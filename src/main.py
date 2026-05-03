@@ -1,5 +1,6 @@
 import sys
 import argparse
+import insert_note
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A notes.txt utility")
@@ -14,5 +15,6 @@ if __name__ == "__main__":
 
     if args.insert:
         print("Insert")
+        insert_note.insert_note(args.insert[0])
     elif args.delete:
         print("Delete")
