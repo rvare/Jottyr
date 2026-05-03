@@ -8,7 +8,7 @@ def delete_note(line_number: int) -> None:
     with open("../notes.txt", 'r', encoding="utf-8") as notes_file:
         note_lines = notes_file.readlines()
         print(note_lines)
-    with open("../notes2.txt", 'w', encoding="utf-8") as notes_file:
+    with open("../notes.txt", 'w', encoding="utf-8") as notes_file:
         for note_line in note_lines:
             if line_number_count != line_number:
                 notes_file.write(note_line)
