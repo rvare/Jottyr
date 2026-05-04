@@ -1,6 +1,6 @@
 def delete_note(line_number: int) -> None:
     """
-    Deletes note from notes.txt file.
+    Delete a note from notes.txt file by using its line number.
     line_number: Integer parameter that has the line number of the note to delete.
     """
     line_number_count = 1

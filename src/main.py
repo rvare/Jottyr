@@ -11,7 +11,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--new-note", type=str, nargs=1, help="Create a new note and append it to the notes.txt file.")
     parser.add_argument("-i", "--important", type=bool, action=argparse.BooleanOptionalAction, help="Indicates if new note is important or note.")
     parser.add_argument("-s", "--search", type=str, nargs=1, help="Find notes based on regex.")
-    parser.add_argument("-d", "--delete", type=int, nargs=1, help="Delete a note.")
+    parser.add_argument("-d", "--delete", type=int, nargs=1, help="Delete a note by providing the note's line number.")
     parser.add_argument("-a", "--archive", type=bool, action=argparse.BooleanOptionalAction, help="Archive the current contents of your notes.txt file.")
 
     args = parser.parse_args()
