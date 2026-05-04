@@ -3,6 +3,7 @@ import argparse
 from insert_note import insert_note
 from delete_note import delete_note
 from regex_search import regex_search
+from archival import archive
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A notes.txt utility")
@@ -11,6 +12,7 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--important", type=bool, action=argparse.BooleanOptionalAction, help="Indicates if new note is important or note.")
     parser.add_argument("-s", "--search", type=str, nargs=1, help="Find notes based on regex.")
     parser.add_argument("-d", "--delete", type=int, nargs=1, help="Delete a note.")
+    parser.add_argument("-a", "--archive", type=bool, action=argparse.BooleanOptionalAction, help="Archive the current contents of your notes.txt file.")
 
     args = parser.parse_args()
 
@@ -22,5 +24,7 @@ if __name__ == "__main__":
             print(note)
     elif args.delete:
         delete_note(args.delete[0])
+    elif args.archive:
+        archive()
     else:
         print("ERROR: Must give parameters. Do --help to see all parameters.")
