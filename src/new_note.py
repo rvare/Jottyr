@@ -1,7 +1,7 @@
 import datetime
 import os
 
-def insert_note(date_format: str, important: bool) -> None:
+def new_note(date_format: str, important: bool) -> None:
     """
     Insert new note content to the notes.txt file.
     note_content: String that contains the users note content.
