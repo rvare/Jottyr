@@ -1,5 +1,6 @@
 import sys
 import argparse
+import re
 from insert_note import insert_note
 from delete_note import delete_note
 from regex_search import regex_search
@@ -19,9 +20,16 @@ if __name__ == "__main__":
     if args.new_note:
         insert_note(args.format[0] if args.format else None, args.important)
     elif args.search:
-        found_notes = regex_search(args.search[0])
-        for note in found_notes:
-            print(note)
+        try:
+            found_notes = regex_search(args.search[0])
+            for note in found_notes:
+                print(note)
+        except re.error:
+            print(f"ERROR: The regex {args.search[0]} is not valid")
+            print(f"Common Error: you're escaping sequences, you need to use double backslashes.")
+            print("Else, review Python regex syntax.")
+        except Exception as exception:
+            print(exception)
     elif args.delete:
         delete_note(args.delete[0])
     elif args.archive:

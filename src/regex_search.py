@@ -7,11 +7,12 @@ def regex_search(regex_str: str) -> list[str]:
     regex_str: Raw string that represents a regex.
     Retruns a list of strings that represents a list of notes.
     """
-    print(regex_str)
     found_notes = []
     with open("../notes.txt", 'r', encoding="utf-8") as notes_file:
         notes_list = notes_file.readlines()
         for note in notes_list:
             if re.search(regex_str, note):
                 found_notes.append(note.rstrip())
+    if len(found_notes) == 0:
+        raise Exception("No notes found")
     return found_notes
