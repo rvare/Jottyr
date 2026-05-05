@@ -2,7 +2,10 @@ import os
 import datetime
 
 def archive() -> None:
-    """Used to archive notes.txt."""
+    """
+    Used to archive notes.txt.
+    Will create a new file with %Y%m%d prefixed to it.
+    """
     notes_list = None
     with open("../notes.txt", 'r', encoding="utf-8") as notes_file:
         notes_list = notes_file.readlines()
