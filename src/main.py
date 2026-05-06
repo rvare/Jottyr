@@ -5,6 +5,7 @@ from new_note import new_note
 from delete_note import delete_note
 from regex_search import regex_search
 from archival import archive
+from constants import *
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A notes.txt utility")

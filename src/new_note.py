@@ -1,5 +1,7 @@
 import datetime
 import os
+from pathlib import Path
+from constants import *
 
 def new_note(date_format: str, important: bool) -> None:
     """
@@ -19,6 +21,6 @@ def new_note(date_format: str, important: bool) -> None:
         signifier = "(*) "
 
     iso_date = datetime.datetime.now().strftime(datetime_str_format)
-    with open("../notes.txt", 'a', encoding="utf-8") as notes_file:
+    with open(f"{Path.home()}/{NOTES_PATH}", 'a', encoding="utf-8") as notes_file:
         notes_file.write(f"{signifier}{iso_date}  {note_content}\n")
 
