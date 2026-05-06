@@ -10,17 +10,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A notes.txt utility")
     parser.add_argument("-f", "--format", type=str, nargs=1,
                         help="Chang formatting for input.")
-    parser.add_argument("-i", "--important", type=bool,
+    parser.add_argument("-i", "--important",
                         action=argparse.BooleanOptionalAction,
                         help="Indicates if new note is important or note.")
-    parser.add_argument("-n", "--new-note", type=bool,
+    parser.add_argument("-n", "--new-note",
                         action=argparse.BooleanOptionalAction,
                         help="Create a new note and append it to the notes.txt file.")
     parser.add_argument("-s", "--search", type=str, nargs=1,
                         help="Find notes based on regex.")
     parser.add_argument("-d", "--delete", type=int, nargs=1,
                         help="Delete a note by providing the note's line number.")
-    parser.add_argument("-a", "--archive", type=bool,
+    parser.add_argument("-a", "--archive",
                         action=argparse.BooleanOptionalAction,
                         help="Archive the current contents of your notes.txt file.")
 
