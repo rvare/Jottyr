@@ -9,7 +9,7 @@ def archive() -> None:
     Will create a new file with %Y%m%d prefixed to it.
     """
     notes_list = None
-    with open("../notes.txt", 'r', encoding="utf-8") as notes_file:
+    with open(f"{Path.home()}/{NOTES_PATH}", 'r', encoding="utf-8") as notes_file:
         notes_list = notes_file.readlines()
 
     iso_date = datetime.datetime.now().strftime("%Y%m%d")
