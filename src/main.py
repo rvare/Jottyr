@@ -5,6 +5,7 @@ from new_note import new_note
 from delete_note import delete_note
 from regex_search import regex_search
 from archival import archive
+from html_output import html_output
 from constants import *
 
 if __name__ == "__main__":
@@ -24,6 +25,8 @@ if __name__ == "__main__":
     parser.add_argument("-a", "--archive",
                         action=argparse.BooleanOptionalAction,
                         help="Archive the current contents of your notes.txt file.")
+    parser.add_argument("-o", "--output", action=argparse.BooleanOptionalAction,
+                        help="Output your notes.txt file into an HMTL file.")
 
     args = parser.parse_args()
 
@@ -45,6 +48,8 @@ if __name__ == "__main__":
         delete_note(args.delete[0])
     elif args.archive:
         archive()
+    elif args.output:
+        html_output()
     else:
         print("ERROR: Must give parameters. Do --help to see all parameters.")
 
