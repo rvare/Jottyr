@@ -34,3 +34,5 @@ def html_output() -> None:
         html_file.write("\n\t\t</table>")
         html_file.write("\n\t</body>")
         html_file.write("\n</html>")
+
+    print(f"\nHTML file saved to: {Path.home()}/{iso_date}_notes.html")

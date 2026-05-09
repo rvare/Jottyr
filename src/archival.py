@@ -17,3 +17,5 @@ def archive() -> None:
     with open(f"{Path.home()}/archive_{iso_date}.txt",
                 'w', encoding="utf-8") as archive_file:
         archive_file.writelines(notes_list);
+
+    print(f"\nArchived saved to: {Path.home()}/archive_{iso_date}.txt")
