@@ -10,11 +10,13 @@ def regex_search(regex_str: str) -> list[str]:
     Retruns a list of strings that represents a list of notes.
     """
     found_notes = []
+    current_line_number: int = 1
     with open(f"{Path.home()}/{NOTES_PATH}", 'r', encoding="utf-8") as notes_file:
         notes_list = notes_file.readlines()
         for note in notes_list:
             if re.search(regex_str, note):
-                found_notes.append(note.rstrip())
+                found_notes.append(f"{current_line_number} {note.rstrip()}")
+            current_line_number += 1
     if len(found_notes) == 0:
         raise Exception("No notes found")
     return found_notes
