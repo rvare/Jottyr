@@ -45,7 +45,7 @@ To export your notes as a single HTML file, use the `-o` flag:
 jottyr -o
 ```
 
-The HTML file will be saved in your home directory, and you will see the following output: `HTML file saved to: <path to home>/<iso_date>_notes.html
+The HTML file will be saved in your home directory, and you will see the following output: `HTML file saved to: <path to home>/<iso_date>_notes.html`
 
 To search for a note, use a regular expression with the `-s` flag
 

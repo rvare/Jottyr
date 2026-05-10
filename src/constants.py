@@ -1,4 +1,8 @@
 """Contains constants for other functions to use."""
+
+# Copyright 2026 Richard Varela (rvare)
+# Licnese: GPL v3
+
 NOTES_PATH = "notes.txt"
 NOTE_SIGNIFIER = "(*) "
 ISO_DATE_FORMAT = "%Y-%m-%d"

@@ -1,3 +1,6 @@
+# Copyright 2026 Richard Varela (rvare)
+# Licnese: GPL v3
+
 import os
 import datetime
 import constants
