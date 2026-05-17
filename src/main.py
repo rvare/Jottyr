@@ -14,7 +14,9 @@ from constants import *
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A notes.txt utility")
     parser.add_argument("-f", "--format", type=str, nargs=1,
-                        help="Chang formatting for input.")
+                        help="Chang formatting for date format."
+                        + " When not given, default to using just date."
+                        + " Use 'datetime' to include both date and time.")
     parser.add_argument("-i", "--important",
                         action=argparse.BooleanOptionalAction,
                         help="Indicates if new note is important or note.")

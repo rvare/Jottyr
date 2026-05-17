@@ -2,7 +2,7 @@
 
 A Python utility to work with notes.txt file.
 
-(Don't know what a notes.txt file is? check out my article: [notes.txt](https://rvare.github.io/notestxt.html).
+(Don't know what a notes.txt file is? check out my article: [notes.txt](https://rvare.github.io/notestxt.html)).
 
 ## Features
 
