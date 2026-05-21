@@ -8,6 +8,10 @@ import constants
 from pathlib import Path
 
 def note_output(output_format: str) -> None:
+    """
+    Function used to determine what output format to use.
+    output_format: String that's used to determine output format type.
+    """
     match output_format:
         case "html":
             html_output()
@@ -42,9 +46,9 @@ def delimiter_output(delimiter_type: str) -> None:
     field_names = ["Important", "Date", "Content"]
 
     if delimiter_type == "csv":
-        delimiter_char = ','
+        delimiter_char = constants.COMMA_DELIMITER
     elif delimiter_type == "tsv":
-        delimiter_char = '\t'
+        delimiter_char = constants.TAB_DELIMITER
     
     with open(f"{Path.home()}/{iso_date}_notes.{delimiter_type}", 'w', encoding='utf-8',
               newline='') as delimited_file:
@@ -68,11 +72,9 @@ def delimiter_output(delimiter_type: str) -> None:
               + f"{delimiter_type}")
 
 def html_output() -> None:
-    """
-    Creates an HTML file of all notes in notes.txt.
-    """
+    """Creates an HTML file of all notes in notes.txt."""
     note_lines: list = None
-    signifier = ""
+    signifier: str = ""
     with open(f"{Path.home()}/{constants.NOTES_PATH}", 'r', encoding='utf-8') as notes_file:
          note_lines = notes_file.readlines()
 	

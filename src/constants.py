@@ -8,4 +8,6 @@ NOTE_SIGNIFIER = "(*) "
 ISO_DATE_FORMAT = "%Y-%m-%d"
 ISO_DATETIME_FORMAT = "%Y-%m-%dT%H:%M"
 ISO_DATE_FILE_FORMAT = "%Y%m%d"
+TAB_DELIMITER = '\t'
+COMMA_DELIMITER = ','
 # ARCHIVE_PATH # TODO Later, will try to find a way to use directories.
