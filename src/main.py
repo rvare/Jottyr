@@ -31,7 +31,7 @@ if __name__ == "__main__":
                         action=argparse.BooleanOptionalAction,
                         help="Archive the current contents of your notes.txt file.")
     parser.add_argument("-o", "--output", type=str, nargs=1,
-                        help="Output your notes.txt file into an HMTL file.")
+                        help="Convert you notes.txt file into a CSV, TSV, or HTML file.")
 
     args = parser.parse_args()
 
@@ -47,7 +47,6 @@ if __name__ == "__main__":
         elif args.archive:
             archive()
         elif args.output:
-            # html_output()
             note_output(args.output[0])
         else:
             print("ERROR: Must give parameters. Do --help to see all parameters.")
