@@ -8,7 +8,7 @@ from new_note import new_note
 from delete_note import delete_note
 from regex_search import regex_search
 from archival import archive
-from html_output import html_output
+from note_output import note_output
 from constants import *
 
 if __name__ == "__main__":
@@ -30,8 +30,8 @@ if __name__ == "__main__":
     parser.add_argument("-a", "--archive",
                         action=argparse.BooleanOptionalAction,
                         help="Archive the current contents of your notes.txt file.")
-    parser.add_argument("-o", "--output", action=argparse.BooleanOptionalAction,
-                        help="Output your notes.txt file into an HMTL file.")
+    parser.add_argument("-o", "--output", type=str, nargs=1,
+                        help="Convert you notes.txt file into a CSV, TSV, or HTML file.")
 
     args = parser.parse_args()
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         elif args.archive:
             archive()
         elif args.output:
-            html_output()
+            note_output(args.output[0])
         else:
             print("ERROR: Must give parameters. Do --help to see all parameters.")
     except KeyboardInterrupt as ki_ex: # For now, we'll exit when a control signal happens.
